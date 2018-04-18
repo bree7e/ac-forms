@@ -1,8 +1,8 @@
 <h2>FormsModule</h2>
-<md-card>
-  <md-card-title>
+<mat-card>
+  <mat-card-title>
     Registration form
-  </md-card-title>
+  </mat-card-title>
   <form novalidate #f="ngForm">
     <input [ngModel]="name.first" name="first" placeholder="First name">
     <input [ngModel]="name.last" name="last" placeholder="Last name">
@@ -15,13 +15,13 @@
     </div>
     <label>Would you like to receive a newsletter?</label>
     <switch-control name="newsletter" ngModel></switch-control>
-    <md-card-actions align="end">
-      <button md-button>SUBMIT</button>
-    </md-card-actions>
+    <mat-card-actions align="end">
+      <button mat-button>SUBMIT</button>
+    </mat-card-actions>
   </form>
-</md-card>
-<md-card>
+</mat-card>
+<mat-card>
   <p>Form: {{ f.value | json }}</p>
   <p>Form status: {{ f.control.status }}</p>
   <p>Account errors: {{ account.control?.errors | json  }}</p>
-</md-card>
+</mat-card>

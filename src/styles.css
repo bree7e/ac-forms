@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 /*here start the horrible, hack-y styles. for demo use only! */
 
@@ -29,7 +29,7 @@ reactive-forms-comp, forms-comp {
   align-items: center;
 }
 
-md-card {
+mat-card {
   width: 500px;
   margin: 8px;
 }
@@ -62,11 +62,11 @@ label {
   color: red;
 }
 
-[md-button] {
+[mat-button] {
   margin: 0 -6px !important;
 }
 
-form md-card-actions {
+form mat-card-actions {
   margin-bottom: -24px;
 }
 
