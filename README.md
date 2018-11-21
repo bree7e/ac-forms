@@ -23,9 +23,11 @@
 
 ### Шаблонная форма
 ```html
-    <input [ngModel]="name.first" name="first" placeholder="Имя">
-    <input [ngModel]="name.last" name="last" placeholder="Фамилия">
-    <pre>{{ name | json}}</pre>
+    <div ngModelGroup="account">
+      <label>Аккаунт</label>
+      <input ngModel name="username" placeholder="Логин">
+      <input ngModel name="password" placeholder="Пароль" required>
+    </div>
 ```
 
 
