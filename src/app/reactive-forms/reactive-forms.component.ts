@@ -16,6 +16,10 @@ export class ReactiveFormsComponent implements OnInit {
       password: '',
       newsletter: '',
     });
+    this.form.patchValue({
+      first: 'Соловей',
+      last: 'Разбойник'
+    });
   }
 
   ngOnInit() {
