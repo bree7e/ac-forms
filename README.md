@@ -1,5 +1,25 @@
-This is the repo for the live demo of Angular forms at Angular Connect 2016.
+## Импорт модулей для работы с формами
 
-It's not accepting PRs or issues at this time. Thanks!
+Импортировать 2 модуля
+* FormsModule
+* ReactiveFormsModule
 
-> Updated to Angular 5
+```ts
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,          // <=== Шаблонные формы
+    ReactiveFormsModule,  // <=== Реактивные формы
+    MatCardModule,
+    MatButtonModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
