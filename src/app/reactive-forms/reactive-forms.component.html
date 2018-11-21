@@ -21,4 +21,6 @@
 </mat-card>
 <mat-card>
   <pre>Form: {{ form.value | json }}</pre>
+  <pre>Form status: {{ form.status }}</pre>
+  <pre>Username status: {{ form.get('account.username').status }}</pre>
 </mat-card>
