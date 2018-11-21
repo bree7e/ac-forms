@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormsComponent implements OnInit {
 
-  constructor() { }
+  name = { first: 'Илья ', last: 'Муромец' };
 
   ngOnInit() {
   }
