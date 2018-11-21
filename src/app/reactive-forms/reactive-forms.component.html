@@ -6,14 +6,14 @@
   <form novalidate [formGroup]="form">
     <input formControlName="first" placeholder="Имя">
     <input formControlName="last" placeholder="Фамилия">
-    <div>
+    <div formGroupName="account">
       <label>Аккаунт</label>
       <input formControlName="username" placeholder="Логин">
       <input formControlName="password" placeholder="Пароль" required>
-      <label>Желаете получать рассылку?</label>
-      <input type="radio" value="yes" formControlName="newsletter" checked>Да
-      <input type="radio" value="no" formControlName="newsletter">Нет
     </div>
+    <label>Желаете получать рассылку?</label>
+    <input type="radio" value="yes" formControlName="newsletter" checked>Да
+    <input type="radio" value="no" formControlName="newsletter">Нет
     <mat-card-actions>
       <button mat-button>Зарегистрироваться</button>
     </mat-card-actions>

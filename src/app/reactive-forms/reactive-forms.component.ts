@@ -12,8 +12,10 @@ export class ReactiveFormsComponent implements OnInit {
     this.form = this.fb.group({
       first: '',
       last: '',
-      username: '',
-      password: '',
+      account: this.fb.group({
+        username: '',
+        password: '',
+      }),
       newsletter: '',
     });
     this.form.patchValue({
