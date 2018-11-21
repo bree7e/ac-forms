@@ -1,49 +1,22 @@
-## Работа с реактивными формами
-
-### Создание контролов вручную
-```ts
-  form = new FormGroup({
-    first: new FormControl(),
-    last: new FormControl(),
-    username: new FormControl(),
-    password: new FormControl(),
-    newsletter: new FormControl(),
-  });
-```
-
-### Или создание контролов с помощью `FormBuilder`
-```ts
-  form: FormGroup;
-  constructor(public fb: FormBuilder) {
-    this.form = this.fb.group({
-      first: '',
-      last: '',
-      username: '',
-      password: '',
-      newsletter: '',
-    });
-  }
-```
+## Работа с шаблонными формами
 
 ### Работа с разметкой 
-У тега формы следует разместить директиву `formGroup` со значением созданной формы `form`
-```html
-  <form novalidate [formGroup]="form">
-```
+У тега формы ничего размещать не надо. 
 
-Заменить атрибут `name` на `formControlName`.   Вместо
+Каждому элементу ввода следует добавть директиву `ngModel`
 ```html
-  <input name="first" placeholder="Имя">
+  <input ngModel name="first" placeholder="Имя">
 ```
-Должно стать:
-```html
-  <input formControlName="first" placeholder="Имя">
-```
+* Контролы создаются автоматически
+* Работа со значениями формы аналогичная реактивным формам 
 
 ### Работа со значениями формы
+Для получения значения формы можно воспользоваться шаблонной перменной. Разместим её у тега формы и получим контроллер директивы `ngForm`.
+```html
+  <form novalidate #f="ngForm">
+```
+
 Получить значения можно через свойство формы `value`
 ```html
 <pre>Form: {{ form.value | json }}</pre>
 ```
-
-* [FormGroupDirective](https://angular.io/api/forms/FormGroupDirective)

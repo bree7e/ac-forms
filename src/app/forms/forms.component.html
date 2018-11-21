@@ -3,20 +3,22 @@
   <mat-card-title>
     Форма регистрации
   </mat-card-title>
-  <form novalidate>
-    <input name="first" placeholder="Имя">
-    <input name="last" placeholder="Фамилия">
+  <form novalidate #f="ngForm">
+    <input ngModel name="first" placeholder="Имя">
+    <input ngModel name="last" placeholder="Фамилия">
     <div>
       <label>Аккаунт</label>
-      <input name="username" placeholder="Логин">
-      <input name="password" placeholder="Пароль" required>
+      <input ngModel name="username" placeholder="Логин">
+      <input ngModel name="password" placeholder="Пароль" required>
       <label>Желаете получать рассылку?</label>
-      <input type="radio" value="yes" name="newsletter" checked>Да
-      <input type="radio" value="no" name="newsletter">Нет
+      <input type="radio" value="yes" ngModel name="newsletter" checked>Да
+      <input type="radio" value="no" ngModel name="newsletter">Нет
     </div>
     <mat-card-actions>
       <button mat-button>Зарегистрироваться</button>
     </mat-card-actions>
   </form>
 </mat-card>
-
+<mat-card>
+  <pre>Form: {{ f.value | json }}</pre>
+</mat-card>
