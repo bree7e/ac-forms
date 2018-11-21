@@ -11,7 +11,7 @@
   });
 ```
 
-### Создание контролов с помощью `FormBuilder`
+### Или создание контролов с помощью `FormBuilder`
 ```ts
   form: FormGroup;
   constructor(public fb: FormBuilder) {
@@ -24,3 +24,26 @@
     });
   }
 ```
+
+### Работа с разметкой 
+У тега формы следует разместить директиву `formGroup` со значением созданной формы `form`
+```html
+  <form novalidate [formGroup]="form">
+```
+
+Заменить атрибут `name` на `formControlName`.   Вместо
+```html
+  <input name="first" placeholder="Имя">
+```
+Должно стать:
+```html
+  <input formControlName="first" placeholder="Имя">
+```
+
+### Работа со значениями формы
+Получить значения можно через свойство формы `value`
+```html
+<pre>Form: {{ form.value | json }}</pre>
+```
+
+* [FormGroupDirective](https://angular.io/api/forms/FormGroupDirective)
