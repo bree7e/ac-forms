@@ -1,21 +1,18 @@
 <h2>ReactiveFormsModule</h2>
 <mat-card>
   <mat-card-title>
-    Registration form
+    Форма регистрации
   </mat-card-title>
   <form novalidate [formGroup]="form">
-    <input formControlName="first" placeholder="First name">
-    <input formControlName="last" placeholder="Last name">
+    <input formControlName="first" placeholder="Имя">
+    <input formControlName="last" placeholder="Фамилия">
     <div formGroupName="account">
-      <label>Account</label>
-      <input formControlName="username" placeholder="Username">
-      <input formControlName="password" placeholder="Password">
-      <input formControlName="confirm" placeholder="Confirm password">
+      <label>Аккаунт</label>
+      <input formControlName="username" placeholder="Логин">
+      <input formControlName="password" placeholder="Пароль">
     </div>
-    <label>Would you like to receive a newsletter?</label>
-    <switch-control formControlName="newsletter"></switch-control>
     <mat-card-actions align="end">
-      <button mat-button>SUBMIT</button>
+      <button mat-button>Зарегистрироваться</button>
     </mat-card-actions>
   </form>
 </mat-card>
