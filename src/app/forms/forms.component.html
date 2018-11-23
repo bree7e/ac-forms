@@ -8,8 +8,8 @@
     <input [ngModel]="name.last" name="last" placeholder="Фамилия">
     <div ngModelGroup="account">
       <label>Аккаунт</label>
-      <input ngModel name="username" placeholder="Логин">
-      <input ngModel name="password" placeholder="Пароль" required>
+      <input ngModel name="username" placeholder="Логин" required>
+      <input ngModel name="password" placeholder="Пароль" required #pass="ngModel">
     </div>
     <label>Желаете получать рассылку?</label>
     <input type="radio" value="yes" ngModel name="newsletter" checked>Да
@@ -22,4 +22,6 @@
 <mat-card>
   <pre>Form: {{ f.value | json }}</pre>
   <pre>{{ name | json}}</pre>
+  <pre>Form status: {{ f.control?.status }}</pre>
+  <pre>Username status: {{ pass.status }}</pre>
 </mat-card>
